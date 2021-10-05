@@ -23,8 +23,14 @@ export default createStore({
   },
   mutations: {
     addMangaToList(state, newManga){
-      state.listManga.push(newManga)
-      console.log(state.listManga);
+      let mangaToAdd={
+        name : newManga.name,
+        price : newManga.price,
+        parution : newManga.parution,
+        lastReleasedVolume : newManga.lastReleasedVolume,
+        lastBoughtVolume : newManga.lastBoughtVolume,
+      }
+      state.listManga.push(mangaToAdd)
     }
   },
   actions: {
