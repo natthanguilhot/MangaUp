@@ -3,7 +3,7 @@
   <div class="flex justify-center items-center">
     <table>
       <thead class="border">
-        <tr>
+        <tr class="font-bold">
           <th>Nom</th>
           <th>Prix</th>
           <th>Parution</th>
@@ -13,11 +13,11 @@
       </thead>
       <tbody>
         <tr v-for="manga in $store.state.listManga" :key="manga.id">
-          <th class="w-36">{{ manga.name }}</th>
-          <th class="w-36">{{ priceFormat(manga.price) }}</th>
-          <th class="w-36">{{ manga.parution }}</th>
-          <th class="w-36">{{ manga.lastReleasedVolume }}</th>
-          <th class="w-36">{{ manga.lastBoughtVolume }}</th>
+          <th class="w-36 border">{{ manga.name }}</th>
+          <th class="w-36 border">{{ priceFormat(manga.price) }}</th>
+          <th class="w-36 border">{{ manga.parution }}</th>
+          <th class="w-36 border">{{ manga.lastReleasedVolume }}</th>
+          <th class="w-36 border">{{ manga.lastBoughtVolume }}</th>
         </tr>
       </tbody>
     </table>
@@ -41,25 +41,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-// th {
-//   border: 1px black solid;
-// }
-thead {
-  border: 3px black solid;
-}
-input {
-  outline: none;
-}
+<style lang="scss" scoped>
 tbody tr {
   &:hover {
     background-color: rgb(199, 199, 199);
   }
-}
-.input {
-  @apply border rounded m-1 p-1;
-}
-tbody th {
-  @apply border;
 }
 </style>
