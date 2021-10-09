@@ -6,7 +6,7 @@ export default createStore({
       {
         id:0,
         name: "My hero academia",
-        price: 690,
+        price: 6.90,
         parution: 'En cours',
         lastReleasedVolume: 30,
         lastBoughtVolume: 29
@@ -14,7 +14,7 @@ export default createStore({
       {
         id:1,
         name: "Boruto",
-        price: 790,
+        price: 7.90,
         parution: 'En cours',
         lastReleasedVolume: 16,
         lastBoughtVolume: 11
