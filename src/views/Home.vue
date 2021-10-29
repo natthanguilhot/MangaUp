@@ -1,7 +1,10 @@
 <template>
-  <FormAddManga />
+  <div class="m-auto w-auto flex justify-center items-center">
+    <button @click="formAddManga = !formAddManga" class="p-4 border hover:shadow-md m-4 rounded-full w-10 h-10 flex justify-center items-center text-2xl"><span v-if="formAddManga == false">+</span><span v-else>-</span></button>
+  </div>
+  <FormAddManga v-show="formAddManga"/>
   <div class="flex justify-center items-center">
-    <table>
+    <table class="rounded">
       <thead class="border">
         <tr class="font-bold">
           <th>Nom</th>
@@ -30,6 +33,11 @@ import FormAddManga from "../components/FormAddManga";
 
 export default {
   name: 'Home',
+  data(){
+    return {
+      formAddManga:false,
+    }
+  },
   components: {
     FormAddManga,
   },
