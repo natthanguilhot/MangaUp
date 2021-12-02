@@ -1,10 +1,19 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="appVue" class="dark:bg-gray-700 transition-colors duration-300 dark:text-white h-screen">
+    <TheDarkModeSwitcher />
+    <router-link to="/" class=""><h1 class="text-4xl font-bold p-4">MangaUp</h1></router-link>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
+<script>
+import TheDarkModeSwitcher from "@/components/TheDarkModeSwitcher";
+
+export default {
+  components:{
+    TheDarkModeSwitcher,
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -17,11 +26,8 @@
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
-    color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }
