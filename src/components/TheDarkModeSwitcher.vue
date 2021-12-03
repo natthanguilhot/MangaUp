@@ -1,5 +1,5 @@
 <template>
-    <button @click="SwitchDM" class="absolute top-1 left-1">
+    <button @click="SwitchDM" class="absolute top-1 left-1" aria-label="Passer au mode sombre">
         <i class="fas fa-adjust"></i>
     </button>
 </template>

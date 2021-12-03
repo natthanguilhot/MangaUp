@@ -7,7 +7,7 @@
     <table class="m-4">
       <thead class="">
         <tr class="font-bold">
-          <th class="border w-36">Tomes</th>
+          <th class="border w-36">Tomes sortis</th>
           <th class="border w-36">Prix</th>
           <th class="border w-36">Tomes Achetés</th>
           <th class="border w-36">Tomes Lus</th>
@@ -18,8 +18,8 @@
         <tr v-for="tome in manga.tomes" :key="tome.id" class="hover:bg-gray-400 dark:hover:bg-gray-900">
           <th class="w-36 border p-1">{{ tome.number }}</th>
           <th class="w-36 border p-1">{{ priceFormat(manga.price) }}</th>
-          <th class="w-36 border p-1"><input type="checkbox" v-model="tome.bought"/></th>
-          <th class="w-36 border p-1"><input type="checkbox" v-model="tome.read"/></th>
+          <th class="w-36 border p-1"><label :for="'tomeBought'+tome.number" class="w-36 h-full block"><input :id="'tomeBought'+tome.number" :name="'tomeBought'+tome.number" type="checkbox" v-model="tome.bought"/></label></th>
+          <th class="w-36 border p-1"><label :for="'tomeRead'+tome.number" class="w-36 h-full block"><input :id="'tomeRead'+tome.number" name="'tomeRead'+tome.number" type="checkbox" v-model="tome.read"/></label></th>
         </tr>
       </tbody>
       <tfoot>
