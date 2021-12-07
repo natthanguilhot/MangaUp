@@ -3,326 +3,15 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     listManga : [
-      {
-        id:0,
-        name: "My hero academia",
-        price: 6.60,
-        parution: 'En cours',
-        lastReleasedVolume: 30,
-        lastBoughtVolume: 29,
-        lastRead: 29,
-        tomes: [
-          {
-            id:0,
-            number: 1,
-            bought: true,
-            read: true
-          },
-          {
-            id:1,
-            number: 2,
-            bought: true,
-            read: true
-          },
-          {
-            id:2,
-            number: 3,
-            bought: true,
-            read: true
-          },
-          {
-            id:3,
-            number: 4,
-            bought: true,
-            read: true
-          },{
-            id:4,
-            number: 5,
-            bought: true,
-            read: true
-          },
-          {
-            id:5,
-            number: 6,
-            bought: true,
-            read: true
-          },
-          {
-            id:6,
-            number: 7,
-            bought: true,
-            read: true
-          },
-          {
-            id:7,
-            number: 8,
-            bought: true,
-            read: true
-          },{
-            id:8,
-            number: 9,
-            bought: true,
-            read: true
-          },
-          {
-            id:9,
-            number: 10,
-            bought: true,
-            read: true
-          },
-          {
-            id:10,
-            number: 11,
-            bought: true,
-            read: true
-          },
-          {
-            id:11,
-            number: 12,
-            bought: true,
-            read: true
-          },
-          {
-            id:12,
-            number: 13,
-            bought: true,
-            read: true
-          },
-          {
-            id:13,
-            number: 14,
-            bought: true,
-            read: true
-          },{
-            id:14,
-            number: 15,
-            bought: true,
-            read: true
-          },
-          {
-            id:15,
-            number: 16,
-            bought: true,
-            read: true
-          },
-          {
-            id:16,
-            number: 17,
-            bought: true,
-            read: true
-          },
-          {
-            id:17,
-            number: 18,
-            bought: true,
-            read: true
-          },{
-            id:18,
-            number: 19,
-            bought: true,
-            read: true
-          },
-          {
-            id:19,
-            number: 20,
-            bought: true,
-            read: true
-          },
-          {
-            id:20,
-            number: 21,
-            bought: true,
-            read: true
-          },
-          {
-            id:21,
-            number: 22,
-            bought: true,
-            read: true
-          },
-          {
-            id:22,
-            number: 23,
-            bought: true,
-            read: true
-          },
-          {
-            id:23,
-            number: 24,
-            bought: true,
-            read: true
-          },{
-            id:24,
-            number: 25,
-            bought: true,
-            read: true
-          },
-          {
-            id:25,
-            number: 26,
-            bought: true,
-            read: true
-          },
-          {
-            id:26,
-            number: 27,
-            bought: true,
-            read: true
-          },
-          {
-            id:27,
-            number: 28,
-            bought: true,
-            read: true
-          },{
-            id:28,
-            number: 29,
-            bought: true,
-            read: true
-          },
-          {
-            id:29,
-            number: 30,
-            bought: true,
-            read: false
-          },
-        ],
-      },
-      {
-        id:1,
-        name: "Drifting Dragons",
-        price: 7.50,
-        parution: 'En cours',
-        lastReleasedVolume: 9,
-        lastBoughtVolume: 9,
-        lastRead: 8,
-        tomes: [
-          {
-            id:0,
-            number: 1,
-            bought: true,
-            read: true
-          },
-          {
-            id:1,
-            number: 2,
-            bought: true,
-            read: true
-          },
-          {
-            id:2,
-            number: 3,
-            bought: true,
-            read: true
-          },
-          {
-            id:3,
-            number: 4,
-            bought: true,
-            read: true
-          },
-          {
-            id:4,
-            number: 5,
-            bought: true,
-            read: true
-          },
-          {
-            id:5,
-            number: 6,
-            bought: true,
-            read: true
-          },
-          {
-            id:6,
-            number: 7,
-            bought: true,
-            read: true
-          },
-          {
-            id:7,
-            number: 8,
-            bought: true,
-            read: true
-          },
-          {
-            id:8,
-            number: 9,
-            bought: true,
-            read: false
-          },
-        ],
-      },
-      {
-        id:2,
-        name: "Gunnm",
-        price: 7.50,
-        parution: 'Terminée',
-        lastReleasedVolume: 9,
-        lastBoughtVolume: 7,
-        lastRead: 3,
-        tomes:[
-          {
-            id:0,
-            number: 1,
-            bought: true,
-            read: true
-          },
-          {
-            id:1,
-            number: 2,
-            bought: true,
-            read: true
-          },
-          {
-            id:2,
-            number: 3,
-            bought: true,
-            read: true
-          },
-          {
-            id:3,
-            number: 4,
-            bought: true,
-            read: false
-          },
-          {
-            id:4,
-            number: 5,
-            bought: true,
-            read: false
-          },
-          {
-            id:5,
-            number: 6,
-            bought: true,
-            read: false
-          },
-          {
-            id:6,
-            number: 7,
-            bought: true,
-            read: false
-          },
-          {
-            id:7,
-            number: 8,
-            bought: false,
-            read: false
-          },
-          {
-            id:8,
-            number: 9,
-            bought: false,
-            read: false
-          },
-        ],
-      }
+      
     ],
   },
   mutations: {
+    updateLS(state){
+      localStorage.setItem('MangaUp', JSON.stringify(state.listManga));
+    },
     addMangaToList(state, newManga){
-      let mangaToAdd={
+      let mangaToAdd={ // On créé un manga
         id : state.listManga.length,
         name : newManga.name,
         price : newManga.price,
@@ -332,80 +21,104 @@ export default createStore({
         lastRead : newManga.lastRead,
         tomes:[],
       };
-      for(let i=0; i < mangaToAdd.lastReleasedVolume; i++ ) {
+      for(let i=0; i < mangaToAdd.lastReleasedVolume; i++ ) { // Pour change tome sorti lastReleasedVolume
         let tomeToAdd = {
           id: i,
           number: i+1,
           bought: false,
           read: false,
         }
-        if(tomeToAdd.number <= mangaToAdd.lastBoughtVolume){
+        if(tomeToAdd.number <= mangaToAdd.lastBoughtVolume){ // Si il est acheté, on passe la valeur bought à true
           tomeToAdd.bought = true;
         }
-        if(tomeToAdd.number <= mangaToAdd.lastRead) {
+        if(tomeToAdd.number <= mangaToAdd.lastRead) { // Si il est lu, on passe la valeur read à true
           tomeToAdd.read = true;
         }
-        mangaToAdd.tomes.push(tomeToAdd);
+        mangaToAdd.tomes.push(tomeToAdd); // On push le tome dans le tableau tomes
       }
-      state.listManga.push(mangaToAdd)
+      state.listManga.push(mangaToAdd) // On push le manga dans le tableau listManga
+      localStorage.setItem('MangaUp', JSON.stringify(state.listManga));
     },
     deleteMangaToList(state, indexToDelete) {
       state.listManga.splice(indexToDelete, 1); 
     },
-    addTomeReleased(state, idManga){
-      for( let i = 0; i < state.listManga.length; i++){ 
-        if ( state.listManga[i].id === idManga) { 
-          let tomeToAdd = {
-            id: i,
-            number: state.listManga[i].lastReleasedVolume+1,
-            bought: false,
-            read: false,
-          }
-          state.listManga[i].tomes.push(tomeToAdd);
-        }
-      }
+    addTomeReleased(state, index){
+      let tomeToAdd = {
+        id: index,
+        number: state.listManga[index].lastReleasedVolume+1,
+        bought: false,
+        read: false,
+      };
+      state.listManga[index].lastReleasedVolume++; // Incrémenter le nombre de tome sortie
+      state.listManga[index].tomes.push(tomeToAdd); // Ajouter le dernier tome sortie au tableau des tomes
     },
-    addTomeBought(state, idManga){
-      for( let i = 0; i < state.listManga.length; i++){ 
-        if ( state.listManga[i].id === idManga) {
-          if(state.listManga[i].lastReleasedVolume === state.listManga[i].lastBoughtVolume){
-            let tomeToAdd = {
-              id: state.listManga[i].tomes.length,
-              number: state.listManga[i].lastReleasedVolume+1,
-              bought: true,
-              read: false,
-            }
-            state.listManga[i].tomes.push(tomeToAdd);
-          } else {            
-            for(let tome of state.listManga[i].tomes){
-              if(tome.bought === false){
-                tome.bought = true;
-                break
-              }
-            }
+    addTomeBought(state, index){
+      if(state.listManga[index].lastReleasedVolume === state.listManga[index].lastBoughtVolume){ // Si le dernier acheté == au dernier tome sortie
+        let tomeToAdd = {
+          id: state.listManga[index].tomes.length,
+          number: state.listManga[index].lastReleasedVolume+1,
+          bought: true,
+          read: false,
+        }
+        state.listManga[index].lastReleasedVolume++; // On incrémente le nombre de tome sortie
+        state.listManga[index].tomes.push(tomeToAdd);// Et on ajoute un tome au tableau des tomes
+      } else {
+        for(let tome of state.listManga[index].tomes){
+          if(tome.bought == false){
+            tome.bought = true;
+            break
           }
         }
       }
+      state.listManga[index].lastBoughtVolume++; // Quoi qu'il arrive, on incrémenter le nombre du dernier tome acheté
     },
-    addTomeRead(state, idManga){
-      for( let i = 0; i < state.listManga.length; i++){ 
-        if ( state.listManga[i].id === idManga) { 
-          if(state.listManga[i].lastBoughtVolume === state.listManga[i].lastRead){
-            console.log('incr')
-
-          } else if(state.listManga[i].lastReleasedVolume === state.listManga[i].lastBoughtVolume){
-            let tomeToAdd = {
-              id: state.listManga[i].tomes.length,
-              number: state.listManga[i].lastReleasedVolume+1,
-              bought: true,
-              read: false,
-            }
-            state.listManga[i].tomes.push(tomeToAdd);
-          } else {
-            
+    addTomeRead(state, index){
+      if(state.listManga[index].lastRead === state.listManga[index].lastBoughtVolume && state.listManga[index].lastBoughtVolume === state.listManga[index].lastReleasedVolume){ // Si le dernier acheté == au dernier tome sortie
+        let tomeToAdd = {
+          id: state.listManga[index].tomes.length,
+          number: state.listManga[index].lastReleasedVolume+1,
+          bought: true,
+          read: true,
+        }
+        state.listManga[index].lastReleasedVolume++; // On incrémente le nombre de tome sortie
+        state.listManga[index].lastBoughtVolume++; // On incrémente le nombre de tome acheté
+        state.listManga[index].tomes.push(tomeToAdd); // Et on ajoute un tome au tableau des tomes
+      } else if (state.listManga[index].lastRead === state.listManga[index].lastBoughtVolume) { // Si le dernier tome lu == au dernier tome acheté
+        for(let tome of state.listManga[index].tomes) { 
+          if(tome.read == false){ // On passe le dernier tome non lu et non acheté a vrai
+            tome.read = true;
+            tome.bought = true;
+            break
           }
-        } 
+        }
+        state.listManga[index].lastBoughtVolume++; // On incrémente le nombre de tome acheté
+      } else { // Sinon, on passe le dernier tome non lu à vrai
+        for(let tome of state.listManga[index].tomes) {
+          if(tome.read == false){
+            tome.read = true;
+            break
+          }
+        }
       }
+      state.listManga[index].lastRead++; // Quoi qu'il arrive, on incrémenter le nombre du dernier tome lu
+    },
+    updateTomeBought(state, idManga){
+      let n = 0;
+      for(let tome of state.listManga[idManga].tomes) {
+        if(tome.bought == true){
+          n++;
+        }
+      }
+      state.listManga[idManga].lastBoughtVolume = n;
+    },
+    updateTomeRead(state, idManga){
+      let n = 0;
+      for(let tome of state.listManga[idManga].tomes) {
+        if(tome.read == true){
+          n++;
+        }
+      }
+      state.listManga[idManga].lastRead = n;
     },
   },
   actions: {},

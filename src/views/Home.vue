@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import store from "@/store/index.js";
 // @ is an alias to /src
 import FormAddManga from "../components/FormAddManga";
 import TheMangaArray from "../components/TheMangaArray";
@@ -27,5 +28,15 @@ export default {
     FormAddManga,
     TheMangaArray,
   },
+  methods:{
+    init(){
+      let x = localStorage.getItem('MangaUp');
+      store.state.listManga = JSON.parse(x) || [];
+
+    },
+  },
+  mounted(){
+    this.init();
+  }
 }
 </script>

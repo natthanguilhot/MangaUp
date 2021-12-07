@@ -1,5 +1,5 @@
 <template>
-    <div v-if="$store.state.listManga.length > 0" class="flex justify-center items-center">
+    <div class="flex justify-center items-center">
         <table class="">
             <thead class="">
                 <tr class="font-bold">
@@ -12,23 +12,23 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody v-if="$store.state.listManga.length > 0">
                 <tr v-for="(manga, index) in $store.state.listManga" :key="manga.id" class="hover:bg-gray-400 h-12">
                     <th class="w-36 border">{{ manga.name }}</th>
                     <th class="w-36 border">{{ priceFormat(manga.price) }}</th>
                     <th class="w-36 border">{{ manga.parution }}</th>
                     <th class="w-36 border relative">
-                        <button type="button" @click="addTomeReleased(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
+                        <button type="button" @click="addTomeReleased(index)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
                         {{ manga.tomes.length }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
                     <th class="w-36 border relative">
-                        <button type="button" @click="addTomeBought(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
+                        <button type="button" @click="addTomeBought(index)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
                         {{ totalTomeBought(manga.tomes) }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
                     <th class="w-36 border relative">
-                        <button type="button" @click="addTomeRead(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
+                        <button type="button" @click="addTomeRead(index)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
                         {{ totalTomeRead(manga.tomes) }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
@@ -61,17 +61,14 @@ export default {
         deleteManga(indexToDelete){
             store.commit('deleteMangaToList', indexToDelete);
         },
-        addTomeReleased(idManga){
-            store.commit('addTomeReleased', idManga);
+        addTomeReleased(index){
+            store.commit('addTomeReleased', index);
         },
-        addTomeBought(idManga){
-            store.commit('addTomeBought', idManga);
+        addTomeBought(index){
+            store.commit('addTomeBought', index);
         },
-        addTomeRead(idManga){
-            store.commit('addTomeRead', idManga);
-        },
-        test(){
-            console.log('test');
+        addTomeRead(index){
+            store.commit('addTomeRead', index);
         },
         totalTomeBought(tableauTomes){
             let n = 0;

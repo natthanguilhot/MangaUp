@@ -41,11 +41,10 @@ export default {
   }
 }
 .slide-enter-active {
-  transition: opacity 0.4s, transform 0.4s;
-  transition-delay: 0.4s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .slide-leave-active {
-  transition: opacity 0.4s, transform 0.4s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .slide-enter-from {
   opacity: 0;
