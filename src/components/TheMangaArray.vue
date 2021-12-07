@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="manga in $store.state.listManga" :key="manga.id" class="hover:bg-gray-400 h-12">
+                <tr v-for="(manga) in $store.state.listManga" :key="manga.id" class="hover:bg-gray-400 h-12">
                     <th class="w-36 border">{{ manga.name }}</th>
                     <th class="w-36 border">{{ priceFormat(manga.price) }}</th>
                     <th class="w-36 border">{{ manga.parution }}</th>
