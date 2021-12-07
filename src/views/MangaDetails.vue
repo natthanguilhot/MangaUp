@@ -15,8 +15,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="tome in manga.tomes" :key="tome.id" class="hover:bg-gray-400 dark:hover:bg-gray-900">
-          <th class="w-36 border p-1">{{ tome.number }}</th>
+        <tr v-for="(tome,index) in manga.tomes" :key="tome.id" class="hover:bg-gray-400 dark:hover:bg-gray-900">
+          <th class="w-36 border p-1">{{ index+1 }}</th>
           <th class="w-36 border p-1">{{ priceFormat(manga.price) }}</th>
           <th class="w-36 border p-1"><label :for="'tomeBought'+tome.number" class="w-36 h-full block"><input :id="'tomeBought'+tome.number" :name="'tomeBought'+tome.number" type="checkbox" v-model="tome.bought"/></label></th>
           <th class="w-36 border p-1"><label :for="'tomeRead'+tome.number" class="w-36 h-full block"><input :id="'tomeRead'+tome.number" name="'tomeRead'+tome.number" type="checkbox" v-model="tome.read"/></label></th>

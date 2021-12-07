@@ -13,23 +13,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(manga) in $store.state.listManga" :key="manga.id" class="hover:bg-gray-400 h-12">
+                <tr v-for="(manga, index) in $store.state.listManga" :key="manga.id" class="hover:bg-gray-400 h-12">
                     <th class="w-36 border">{{ manga.name }}</th>
                     <th class="w-36 border">{{ priceFormat(manga.price) }}</th>
                     <th class="w-36 border">{{ manga.parution }}</th>
                     <th class="w-36 border relative">
                         <button type="button" @click="addTomeReleased(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
-                        {{ manga.lastReleasedVolume }}
+                        {{ manga.tomes.length }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
                     <th class="w-36 border relative">
                         <button type="button" @click="addTomeBought(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
-                        {{ manga.lastBoughtVolume }}
+                        {{ totalTomeBought(manga.tomes) }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
                     <th class="w-36 border relative">
                         <button type="button" @click="addTomeRead(manga.id)" class="btnPlus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">+</button>
-                        {{ manga.lastRead }}
+                        {{ totalTomeRead(manga.tomes) }}
                         <button type="button" class="btnMinus hover:!text-white hover:!bg-black dark:hover:!bg-white dark:hover:!text-gray-900">-</button>
                     </th>
                     <th>
@@ -38,7 +38,7 @@
                         </router-link>
                     </th>
                     <th>
-                        <button type="button" @click="deleteManga(manga.id)" aria-label="Supprimer un manga" class="w-8 h-8 flex justify-center items-center text-red-500 bg-white p-1 m-1 border border-black rounded-full hover:bg-black dark:bg-white dark:hover:bg-black">
+                        <button type="button" @click="deleteManga(index)" aria-label="Supprimer un manga" class="w-8 h-8 flex justify-center items-center text-red-500 bg-white p-1 m-1 border border-black rounded-full hover:bg-black dark:bg-white dark:hover:bg-black">
                             <i class="fas fa-times"></i>
                         </button>
                     </th>
@@ -58,8 +58,8 @@ export default {
         priceFormat(prix){
             return prix = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prix);
         },
-        deleteManga(idToDelete){
-            store.commit('deleteMangaToList', idToDelete);
+        deleteManga(indexToDelete){
+            store.commit('deleteMangaToList', indexToDelete);
         },
         addTomeReleased(idManga){
             store.commit('addTomeReleased', idManga);
@@ -73,6 +73,27 @@ export default {
         test(){
             console.log('test');
         },
+        totalTomeBought(tableauTomes){
+            let n = 0;
+            for(let tome of tableauTomes){
+                if (tome.bought == true){
+                    n++;
+                }
+            }
+            return n;
+        },
+        totalTomeRead(tableauTomes){
+            let n = 0;
+            for(let tome of tableauTomes){
+                if (tome.read == true){
+                    n++;
+                }
+            }
+            return n;
+        },
+    },
+    computed:{
+
     },
 }
 </script>

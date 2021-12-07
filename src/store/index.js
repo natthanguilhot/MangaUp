@@ -349,12 +349,8 @@ export default createStore({
       }
       state.listManga.push(mangaToAdd)
     },
-    deleteMangaToList(state, idToDelete) {
-      for( let i = 0; i < state.listManga.length; i++){ 
-        if ( state.listManga[i].id === idToDelete) { 
-          state.listManga.splice(i, 1); 
-        }
-      }
+    deleteMangaToList(state, indexToDelete) {
+      state.listManga.splice(indexToDelete, 1); 
     },
     addTomeReleased(state, idManga){
       for( let i = 0; i < state.listManga.length; i++){ 
@@ -366,7 +362,6 @@ export default createStore({
             read: false,
           }
           state.listManga[i].tomes.push(tomeToAdd);
-          state.listManga[i].lastReleasedVolume++;
         }
       }
     },
@@ -381,8 +376,6 @@ export default createStore({
               read: false,
             }
             state.listManga[i].tomes.push(tomeToAdd);
-            state.listManga[i].lastReleasedVolume++;
-            state.listManga[i].lastBoughtVolume++;
           } else {            
             for(let tome of state.listManga[i].tomes){
               if(tome.bought === false){
@@ -390,7 +383,6 @@ export default createStore({
                 break
               }
             }
-            state.listManga[i].lastBoughtVolume++;
           }
         }
       }
@@ -402,7 +394,13 @@ export default createStore({
             console.log('incr')
 
           } else if(state.listManga[i].lastReleasedVolume === state.listManga[i].lastBoughtVolume){
-
+            let tomeToAdd = {
+              id: state.listManga[i].tomes.length,
+              number: state.listManga[i].lastReleasedVolume+1,
+              bought: true,
+              read: false,
+            }
+            state.listManga[i].tomes.push(tomeToAdd);
           } else {
             
           }
