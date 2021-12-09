@@ -1,5 +1,5 @@
 <template>
-  <form id="myForm" class="border w-11/12 lg:w-6/12 mx-auto my-4 p-4">
+  <form id="myForm" class="border rounded-lg w-11/12 lg:w-6/12 mx-auto my-4 p-4 max-w-[512px]">
     <div class="flex justify-center items-center">
       <label for="name" class="border-b p-1 w-40">Nom</label>
       <input id="name" v-model="newManga.name" type="text" class="input dark:text-black" placeholder="Naruto"/>

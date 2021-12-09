@@ -5,13 +5,13 @@
       <h2 class="font-bold text-xl m-4">{{ manga.name }}</h2>
     </div>
     <div>Parution : <span class="font-bold">{{ manga.parution }}</span></div>
-    <table class="m-4">
+    <table class="m-4 border-separate">
       <thead class="">
         <tr class="font-bold">
-          <th class="border w-36">Tomes sortis</th>
+          <th class="border w-36 rounded-tl-lg">Tomes sortis</th>
           <th class="border w-36">Prix</th>
           <th class="border w-36">Tomes Achetés {{ manga.lastBoughtVolume }}</th>
-          <th class="border w-36">Tomes Lus {{ manga.lastRead }}</th>
+          <th class="border w-36 rounded-tr-lg">Tomes Lus {{ manga.lastRead }}</th>
           <th></th>
         </tr>
       </thead>
@@ -47,7 +47,6 @@ export default {
   methods:{
     updateTomeBought(idManga){
       store.commit('updateTomeBought', idManga);
-      store.commit('updateLS')
     },
     updateTomeRead(idManga){
       store.commit('updateTomeRead', idManga)
@@ -64,10 +63,10 @@ export default {
       let totalBought = 0;
       for(let tome of this.manga.tomes){
         if (tome.bought === true){
-          totalBought++;
+          totalBought = totalBought + this.manga.price;
         }
       }
-      return totalBought;
+      return Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalBought);
     },
     totalRead(){
       let totalRead = 0;
