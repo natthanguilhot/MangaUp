@@ -17,7 +17,7 @@
                     <img src="@/assets/screenMangaUp.png" alt="App MangaUp" class="w-60 h-60 object-cover rounded-full ring-2 ring-gray-400 p-2 m-2 lg:w-80 lg:h-80 lg:mr-20"/>
                     <div class="lg:pl-20 lg:flex-col lg:justify-center lg:items-center w-full mx-auto">
                         <h2 class="bar-gradiant text-2xl mt-8">Le principe</h2>
-                        <p class="w-9/12 mx-auto">MangaUp est une application qui vous permet de savoir ou vous en êtes dans l'achat et la lecture de vos mangas.</p>
+                        <p class="w-9/12 mx-auto">MangaUp est une application gratuite qui vous permet de savoir ou vous en êtes dans l'achat et la lecture de vos mangas.</p>
                         <router-link :to="{name : 'Manga'}">
                             <p class="text-2xl mx-auto font-bold text-white my-4 p-4 w-full max-w-xs border rounded-lg bg-gradient-to-r from-fuchsia-900 to-violet-900 hover:shadow-xl transform hover:-translate-y-1 transition-all">Essayez MangaUp</p>
                         </router-link>
