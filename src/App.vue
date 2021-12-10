@@ -1,9 +1,6 @@
 <template>
-  <div id="appVue" class="dark:bg-gray-700 transition-colors duration-300 dark:text-white min-h-screen">
-    <TheDarkModeSwitcher />
-    <header class="w-60 mx-auto">
-      <router-link to="/" class=""><h1 class="text-4xl font-bold p-4"><img src="./assets/MangaUp_logo.png" alt="MangaUp"/></h1></router-link>
-    </header>
+  <div id="appVue" class="transition-all duration-300 min-h-screen bg-gradient-to-bl from-violet-900 via-fuchsia-900 to-fuchsia-800">
+    <TheHeader />
     <router-view v-slot="{Component}">
       <transition name="slide" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
@@ -12,11 +9,12 @@
   </div>
 </template>
 <script>
-import TheDarkModeSwitcher from "@/components/TheDarkModeSwitcher";
+import TheHeader from "@/components/TheHeader";
+
 
 export default {
   components:{
-    TheDarkModeSwitcher,
+    TheHeader,
   }
 }
 </script>
@@ -30,7 +28,6 @@ export default {
   color: #2c3e50;
   z-index: 1;
 }
-
 #nav {
   padding: 30px;
   a {
@@ -53,5 +50,8 @@ export default {
 .slide-leave-to {
   opacity: 0;
   transform: translateX(-10%);
+}
+html {
+  @apply bg-gradient-to-bl from-violet-900 to-fuchsia-900;
 }
 </style>

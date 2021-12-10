@@ -8,18 +8,23 @@ const routes = [
     component: Home
   },
   {
-    path: '/manga/:id/:name',
-    name: 'MangaDetails',
+    path: '/Manga',
+    name: 'Manga',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "MangaDetails" */ '../views/MangaDetails.vue')
+    component: () => import(/* webpackChunkName: "Manga" */ '../views/Manga.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition){
+    return savedPosition || new Promise((resolve => {
+      setTimeout(()=> resolve({top: 0, behavior :'smooth'}), 300)
+    }))
+  },
 })
 
 export default router
