@@ -2,7 +2,7 @@
   <div id="appVue" class="dark:bg-gray-700 transition-colors duration-300 dark:text-white min-h-screen">
     <TheDarkModeSwitcher />
     <header class="w-60 mx-auto">
-      <router-link to="/" class=""><h1 class="text-4xl font-bold p-4">MangaUp</h1></router-link>
+      <router-link to="/" class=""><h1 class="text-4xl font-bold p-4"><img src="./assets/MangaUp_logo.png" alt="MangaUp" /></h1></router-link>
     </header>
     <router-view v-slot="{Component}">
       <transition name="slide" mode="out-in">
