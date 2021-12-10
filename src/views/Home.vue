@@ -1,6 +1,8 @@
 <template>
     <div class="min-h-screen text-white">
-        <h2 class="text-3xl my-60 w-9/12 lg:w-[40%] mx-auto"><strong>MangaUp</strong>, un suivi simple et efficace de <strong>vos mangas.</strong></h2>
+        <div class="text-3xl my-60 w-10/12 lg:w-[40%] mx-auto flex flex-col justify-center items-center">
+            <h2 class=""><img src="@/assets/logomangaup.png" alt="MangaUp" class="rounded-lg inline"/> un suivi simple et efficace de <strong>vos mangas.</strong></h2>
+        </div>
         <section class="my-10">
             <div class="w-11/12 bg-white mx-auto border text-black rounded-lg max-w-[1200px]">
                 <nav class="rounded-t-lg hidden lg:contents">
@@ -12,12 +14,12 @@
                     </ul>
                 </nav>
                 <div class="flex flex-col justify-around items-center pt-20 mb-10 lg:flex-row-reverse">
-                    <img src="@/assets/screenMangaUp.png" alt="MangaUp" class="w-60 h-60 object-cover rounded-full ring-2 ring-gray-400 p-2 m-2 lg:w-80 lg:h-80 lg:mr-20"/>
+                    <img src="@/assets/screenMangaUp.png" alt="App MangaUp" class="w-60 h-60 object-cover rounded-full ring-2 ring-gray-400 p-2 m-2 lg:w-80 lg:h-80 lg:mr-20"/>
                     <div class="lg:pl-20 lg:flex-col lg:justify-center lg:items-center w-full mx-auto">
                         <h2 class="bar-gradiant text-2xl mt-8">Le principe</h2>
                         <p class="w-9/12 mx-auto">MangaUp est une application qui vous permet de savoir ou vous en êtes dans l'achat et la lecture de vos mangas.</p>
                         <router-link :to="{name : 'Manga'}">
-                            <h2 class="text-2xl mx-auto font-bold text-white my-4 p-4 w-full max-w-xs border rounded-lg bg-gradient-to-r from-fuchsia-900 to-violet-900 hover:shadow-lg transform hover:-translate-y-1 transition-all">Essayez MangaUp</h2>
+                            <p class="text-2xl mx-auto font-bold text-white my-4 p-4 w-full max-w-xs border rounded-lg bg-gradient-to-r from-fuchsia-900 to-violet-900 hover:shadow-xl transform hover:-translate-y-1 transition-all">Essayez MangaUp</p>
                         </router-link>
                     </div>
                 </div>
@@ -37,7 +39,7 @@
                     <h2 class="bar-gradiant text-2xl mt-8">Commencer !</h2>
                     <p class="w-9/12">L'application MangaUp n'attends que vous !</p>
                     <router-link :to="{name : 'Manga'}">
-                        <h2 class="text-2xl font-bold text-white my-4 p-4 w-full border rounded-lg bg-gradient-to-r from-fuchsia-900 to-violet-900 hover:shadow-lg transform hover:-translate-y-1 transition-all">Essayez MangaUp</h2>
+                        <p class="text-2xl font-bold text-white my-4 p-4 w-full border rounded-lg bg-gradient-to-r from-fuchsia-900 to-violet-900 hover:shadow-xl transform hover:-translate-y-1 transition-all">Essayez MangaUp</p>
                     </router-link>
                 </div>
             </div>
