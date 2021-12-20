@@ -1,5 +1,5 @@
 <template>
-  <div id="appVue" class="transition-all duration-300 min-h-screen bg-gradient-to-bl from-violet-900 via-fuchsia-900 to-fuchsia-800">
+  <div id="appVue" class="transition-all duration-300 min-h-screen bg-gradient-to-bl from-cyan-400 via-green-200 to-purple-400">
     <TheHeader />
     <router-view v-slot="{Component}">
       <transition name="slide" mode="out-in">
