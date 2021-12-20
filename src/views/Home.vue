@@ -7,10 +7,10 @@
             <div class="w-11/12 bg-white mx-auto border text-black rounded-lg max-w-[1200px]">
                 <nav class="rounded-t-lg hidden lg:contents">
                     <ul class="flex w-full justify-around items-center h-24 bg-gray-100 rounded-t-lg">
-                        <li class="px-4 py-2 rounded-lg m-1 w-40 bg-white">Intro</li>
+                        <li class="px-4 py-2 rounded-lg m-1 w-40 bg-white">Principe</li>
                         <li class="px-4 py-2 rounded-lg m-1 w-40">Vos données</li>
                         <li class="px-4 py-2 rounded-lg m-1 w-40">Essayez</li>
-                        <li class="px-4 py-2 rounded-lg m-1 w-40">Contact</li>
+                        <!-- <li class="px-4 py-2 rounded-lg m-1 w-40">Contact</li> -->
                     </ul>
                 </nav>
                 <div class="flex flex-col justify-around items-center pt-20 mb-10 lg:flex-row-reverse">
