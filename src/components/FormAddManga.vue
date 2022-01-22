@@ -1,5 +1,5 @@
 <template>
-  <form id="myForm" class="border rounded-lg w-11/12 lg:w-6/12 mx-auto my-4 p-4 max-w-[512px]">
+  <form id="myForm" class="anim_spawner border rounded-lg w-11/12 lg:w-6/12 mx-auto my-4 p-4 max-w-[512px]">
     <div class="flex justify-center items-center">
       <label for="name" class="border-b p-1 w-40">Nom</label>
       <input id="name" v-model="newManga.name" type="text" class="input dark:text-black" placeholder="Naruto"/>
@@ -27,7 +27,7 @@
       <label for="lastRead" class="border-b p-1 w-40">Dernier lu</label>
       <input id="lastRead" @keyup.enter="addManga(newManga)" v-model="newManga.lastRead" class="input dark:text-black" type="number" placeholder="53"/>
     </div>
-    <button @click="addManga(newManga)" type="button" class=" text-black border px-4 py-2 m-4 mt-8 bg-gray-200 rounded w-40">Ajouter</button>
+    <button @click="addManga(newManga)" type="button" class=" text-black border px-4 py-2 m-4 mt-8 bg-gray-200 rounded w-40 hover:bg-gray-900 hover:text-white">Ajouter</button>
   </form>
 </template>
 <script>
@@ -69,6 +69,19 @@ input {
 }
 .input {
   @apply border rounded m-1 p-1 w-60;
+}
+.anim_spawner {
+  animation: anim_spawner 0.7s both;
+}
+@keyframes anim_spawner {
+  0%{
+    transform:translateY(-50px);
+    opacity:0;
+  }
+  100%{
+    transform:translateY(0px);
+    opacity:1;
+  }
 }
 </style>
 
