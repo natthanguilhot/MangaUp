@@ -1,10 +1,10 @@
 <template>
-    <div class="flex justify-center items-center">
-        <table class="border-separate">
+    <div class="flex justify-center items-center overflow-hidden">
+        <table class="border-separate overflow-scroll">
             <thead class="">
                 <tr>
                     <th class="w-36 border">Nom</th>
-                    <th class="w-36 border">Prix</th>
+                    <th @click="sortByPrice($store.state.listManga)" class="w-36 border cursor-pointer">Prix <span v-show="sort" class="inline-block transform -rotate-90">></span><span v-show="!sort" class="inline-block transform rotate-90">></span></th>
                     <th class="w-36 border">Parution</th>
                     <th class="w-36 border">Tomes Sortis</th>
                     <th class="w-36 border">Tomes Achetés</th>
@@ -54,6 +54,11 @@ import store from "@/store/index.js";
 
 export default {
     name:"TheMangaArray",
+    data(){
+        return {
+            sort:true,
+        }
+    },
     methods:{
         priceFormat(prix){
             return prix = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prix);
@@ -69,6 +74,30 @@ export default {
         },
         modifyTomeRead(index, theSwitch){
             store.commit('modifyTomeRead', {index, theSwitch});
+        },
+        sortPrice(a, b) {
+            if (a.price < b.price)
+                return -1;
+            if (a.price > b.price)
+                return 1;
+            return 0;
+        },
+        sortPriceDecrease(a, b) {
+            if (a.price > b.price)
+                return -1;
+            if (a.price < b.price)
+                return 1;
+            return 0;
+        },
+        sortByPrice(array){
+            switch (this.sort) {
+                case true:
+                    this.sort=false;
+                    return array.sort(this.sortPrice);
+                case false:
+                    this.sort=true;
+                    return array.sort(this.sortPriceDecrease);
+            }
         },
     },
     computed:{
