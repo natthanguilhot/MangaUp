@@ -4,9 +4,9 @@
             <thead class="">
                 <tr>
                     <th class="w-36 border">Nom</th>
-                    <th @click="sortByPrice($store.state.listManga)" class="w-36 border cursor-pointer">Prix <span v-show="sort" class="inline-block transform -rotate-90">></span><span v-show="!sort" class="inline-block transform rotate-90">></span></th>
+                    <th @click="sortByPrice($store.state.listManga)" class="w-36 border cursor-pointer">Prix <span v-show="sort == true" class="inline-block transform -rotate-90">></span><span v-show="sort == false" class="inline-block transform rotate-90">></span></th>
                     <th class="w-36 border">Parution</th>
-                    <th class="w-36 border">Tomes Sortis</th>
+                    <th @click="sortByLastBoughtVolume($store.state.listManga)" class="w-36 border">Tomes Sortis</th>
                     <th class="w-36 border">Tomes Achetés</th>
                     <th class="w-36 border">Tomes Lus</th>
                     <th></th>
@@ -56,7 +56,8 @@ export default {
     name:"TheMangaArray",
     data(){
         return {
-            sort:null,
+            sort:true,
+            sortLastBoughtVolume:true,
         }
     },
     methods:{
@@ -89,17 +90,38 @@ export default {
                 return 1;
             return 0;
         },
+        sortLastBoughtVolume(a, b) {
+            if (a.lastBoughtVolume < b.lastBoughtVolume)
+                return -1;
+            if (a.lastBoughtVolume > b.lastBoughtVolume)
+                return 1;
+            return 0;
+        },
+        sortLastBoughtVolumeDecrease(a, b) {
+            if (a.lastBoughtVolume > b.lastBoughtVolume)
+                return -1;
+            if (a.lastBoughtVolume < b.lastBoughtVolume)
+                return 1;
+            return 0;
+        },
         sortByPrice(array){
             switch (this.sort) {
                 case true:
                     this.sort=false;
                     return array.sort(this.sortPrice);
                 case false:
-                    this.sort=true;
+                    this.sort = true;
                     return array.sort(this.sortPriceDecrease);
-                case null :
-                    this.sort=true;
-                    return array.sort(this.sortPriceDecrease);
+            }
+        },
+        sortByLastBoughtVolume(array){
+            switch (this.sort) {
+                case true:
+                    this.sortLastBoughtVolume=false;
+                    return array.sort(this.sortLastBoughtVolume);
+                case false:
+                    this.sortLastBoughtVolume = true;
+                    return array.sort(this.sortLastBoughtVolumeDecrease);
             }
         },
     },
@@ -111,13 +133,13 @@ export default {
 
 <style lang="scss">
 .btnPlus {
-  @apply w-2/6 absolute top-0 left-0 h-full flex justify-center items-center text-black bg-gray-400 dark:bg-gray-900 dark:text-white text-3xl font-bold bg-opacity-30 rounded-full cursor-pointer transition-transform duration-75 transform scale-[0.65] border border-black hover:text-white hover:bg-black;
+  @apply w-2/6 absolute top-0 right-0 h-full flex justify-center items-center text-black bg-gray-400 dark:bg-gray-900 dark:text-white text-3xl font-bold bg-opacity-30 rounded-full cursor-pointer transition-transform duration-75 transform scale-[0.65] border border-black hover:text-white hover:bg-black;
   &:active {
     transform: scale(0.85);
   }
 }
 .btnMinus {
-  @apply w-2/6 absolute top-0 right-0 h-full flex justify-center items-center text-black bg-gray-400 dark:bg-gray-900 dark:text-white text-3xl font-bold bg-opacity-30 rounded-full cursor-pointer transition-transform duration-75 transform scale-[0.65] border border-black hover:text-white hover:bg-black;
+  @apply w-2/6 absolute top-0 left-0 h-full flex justify-center items-center text-black bg-gray-400 dark:bg-gray-900 dark:text-white text-3xl font-bold bg-opacity-30 rounded-full cursor-pointer transition-transform duration-75 transform scale-[0.65] border border-black hover:text-white hover:bg-black;
   &:active {
     transform: scale(0.45);
   }
